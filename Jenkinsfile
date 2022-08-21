@@ -12,22 +12,22 @@ pipeline {
             steps {
                 echo "Hello Java Express"
                 sh 'ls'
-                sh 'sudo docker build -t  livingdead0/springapp:${BUILD_NUMBER} .'
+                sh 'docker build -t  livingdead0/springapp:${BUILD_NUMBER} .'
             }
         }
         stage('Docker Login'){
             steps{
-                sh 'sudo docker login -u livingdead0 -p lucky@123'  
+                sh 'docker login -u livingdead0 -p lucky@123'  
             }
         }
         stage('Docker Push'){
             steps {
-                sh 'sudo docker push livingdead0/springapp:${BUILD_NUMBER}'
+                sh 'docker push livingdead0/springapp:${BUILD_NUMBER}'
             }
         }
         stage('Docker deploy'){
             steps {
-               sh 'sudo docker run -itd -p  8081:8080 livingdead0/springapp:${BUILD_NUMBER}'
+               sh 'docker run -itd -p  8081:8080 livingdead0/springapp:${BUILD_NUMBER}'
             }
         }
     }
