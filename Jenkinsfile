@@ -17,8 +17,7 @@ pipeline {
             }
         }
         stage('Docker Login'){
-                sh 'sudo docker login -u livingdead0 -p lucky@123'
-            }                
+                sh 'sudo docker login -u livingdead0 -p lucky@123'             
         }
         stage('Docker Push'){
             steps {
