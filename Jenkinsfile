@@ -9,7 +9,6 @@ pipeline {
             }
         }
         stage('Build Docker image'){
-          
             steps {
                 echo "Hello Java Express"
                 sh 'ls'
@@ -17,7 +16,9 @@ pipeline {
             }
         }
         stage('Docker Login'){
-                sh 'sudo docker login -u livingdead0 -p lucky@123'             
+            steps{
+                sh 'sudo docker login -u livingdead0 -p lucky@123'  
+            }
         }
         stage('Docker Push'){
             steps {
