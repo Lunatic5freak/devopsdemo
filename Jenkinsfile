@@ -8,12 +8,6 @@ pipeline {
                 sh "mvn clean compile"
             }
         }
-        stage('deploy') { 
-            
-            steps {
-                sh "mvn package"
-            }
-        }
         stage('Build Docker image'){
           
             steps {
