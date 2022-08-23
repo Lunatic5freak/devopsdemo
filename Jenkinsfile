@@ -3,15 +3,11 @@ pipeline {
     stages {
         stage('Compile and Clean') { 
             steps {
-                // Run Maven on a Unix agent.
-              
                 sh "mvn clean install"
             }
         }
         stage('Build Docker image'){
             steps {
-                echo "Hello Java Express"
-                sh 'ls'
                 sh 'docker build -t  livingdead0/springapp:${BUILD_NUMBER} .'
             }
         }
