@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Compile and Clean') { 
             steps {
-                sh "echo pwd"
+                sh "mvn clean package -Dmaven.test.skip=true"
             }
         }
         stage('Build Docker image'){
