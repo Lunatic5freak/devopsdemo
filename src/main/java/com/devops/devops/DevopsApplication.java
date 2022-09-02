@@ -14,6 +14,11 @@ public class DevopsApplication {
 		return "Hello World";
 	}
 
+	@GetMapping("/deploy")
+	public String getDeployMessage() {
+		return "Deploy";
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(DevopsApplication.class, args);
 	}
