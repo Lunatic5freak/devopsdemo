@@ -19,6 +19,11 @@ public class DevopsApplication {
 		return "Deploy";
 	}
 
+	@GetMapping("/new")
+	public String getNewMsg() {
+		return "New msg";
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(DevopsApplication.class, args);
 	}
