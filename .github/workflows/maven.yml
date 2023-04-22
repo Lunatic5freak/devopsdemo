@@ -46,8 +46,9 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: spring-app
         IMAGE_TAG: ${{ github.sha }}
+        LOG: ${{ steps.login-ecr }}
       run: |
-        echo $steps
+        echo $LOG
         docker build -t spring-app .
         docker tag spring-app:latest public.ecr.aws/f9w1s6d7/spring-app:latest
         docker push public.ecr.aws/f9w1s6d7/spring-app:latest
