@@ -48,6 +48,7 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         echo $ECR_REGISTRY
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push public.ecr.aws/f9w1s6d7:$IMAGE_TAG
+        docker build -t spring-app .
+        docker tag spring-app:latest public.ecr.aws/f9w1s6d7/spring-app:latest
+        docker push public.ecr.aws/f9w1s6d7/spring-app:latest
         
