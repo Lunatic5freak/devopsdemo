@@ -21,7 +21,7 @@ public class DevopsApplication {
 
 	@GetMapping("/new")
 	public String getNewMsg() {
-		return "New msg";
+		return "New Message from api";
 	}
 
 	public static void main(String[] args) {
